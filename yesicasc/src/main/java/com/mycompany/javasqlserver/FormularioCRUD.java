@@ -17,7 +17,7 @@ public class FormularioCRUD extends javax.swing.JFrame {
         initComponents();
         //CConexion objetoConexion = new CConexion();
         
-        //objetoConexion.establecerConexion();
+       
         CPlatos objetoPlato = new CPlatos();
         objetoPlato.mostrarPlatos(tablePlatos);
         txtId.setEnabled(false);
