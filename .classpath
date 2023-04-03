@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="AppEclipse/src"/>
+	<classpathentry kind="src" path="PauloDev/src"/>
+	<classpathentry kind="src" path="RocioDev/src"/>
+	<classpathentry kind="src" path="SaraDev/ProyectoSI2/src/main/java"/>
+	<classpathentry kind="src" path="yesicasc/src/main/java"/>
+	<classpathentry kind="output" path="yesicasc/target/classes"/>
+</classpath>
