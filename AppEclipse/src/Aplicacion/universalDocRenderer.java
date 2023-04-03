@@ -1,11 +1,9 @@
 package Aplicacion;
 
 import java.io.FileOutputStream;
-
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-
 
 public class universalDocRenderer {
 	public void renderizar(HistoriaDeUsuario historia, String ruta) throws Exception {
