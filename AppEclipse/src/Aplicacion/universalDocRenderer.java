@@ -1,14 +1,12 @@
 package Aplicacion;
 
 import java.io.FileOutputStream;
-
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
-
 public class universalDocRenderer {
-	public void renderizar(HistoriaDeUsuario historia, String ruta) throws Exception {
+	public void renderizar(userStory historia, String ruta) throws Exception {
         Document documento = new Document();
         PdfWriter.getInstance(documento, new FileOutputStream(ruta));
 
