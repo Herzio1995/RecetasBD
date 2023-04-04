@@ -17,7 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-public class Plantillaa extends JFrame {
+public class Plantilla extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField CAJA1;
@@ -46,7 +46,7 @@ public class Plantillaa extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Plantillaa() {
+	public Plantilla() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 794, 489);
 		contentPane = new JPanel();
