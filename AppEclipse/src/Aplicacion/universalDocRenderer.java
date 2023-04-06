@@ -11,7 +11,7 @@ public class universalDocRenderer {
         PdfWriter.getInstance(documento, new FileOutputStream(ruta));
 
         documento.open();
-        documento.add(new Paragraph("Título: " + historia.getTitulo()));
+        documento.add(new Paragraph("Titulo: " + historia.getTitulo()));
         documento.add(new Paragraph("ID: " + historia.getID()));
         documento.add(new Paragraph("Yo: " + historia.getYo()));
         documento.add(new Paragraph("Requiero: " + historia.getRequiero()));
