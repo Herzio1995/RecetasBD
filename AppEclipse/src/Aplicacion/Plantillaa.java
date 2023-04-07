@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Vista.revision;
+
 import java.awt.Panel;
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
@@ -139,5 +142,7 @@ public class Plantillaa extends JFrame {
 		fondo.setIcon(new ImageIcon("C:\\Users\\HP VICTUS\\Downloads\\456.jpg"));
 		fondo.setBounds(0, 0, 790, 464);
 		contentPane.add(fondo);
+		
+		
 	}
 }
