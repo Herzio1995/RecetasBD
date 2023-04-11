@@ -6,7 +6,7 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -39,6 +39,7 @@ public class universalUIController extends JFrame {
 	private JTextField textFecha;
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
+	private universalDocRenderer renderer = new universalDocRenderer(); 
 
 	/**
 	 * Launch the application.
@@ -189,6 +190,13 @@ public class universalUIController extends JFrame {
 		btnNewButton = new JButton("Aceptar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				userStory us = new userStory("historia test", "autorTest", 1, textYoComo.getText(), textRequiero.getText(), textTalQue.getText(), textCondiciones.getText(), 5, 5);
+				try {
+					renderer.renderizar(us);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				dispose();
 			}
 		});

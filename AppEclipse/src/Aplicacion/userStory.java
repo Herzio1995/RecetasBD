@@ -17,7 +17,7 @@ public class userStory {
    private int complejidad;
    private int importancia = 0;
    
-   public userStory(String titulo,String autor,int ID,LocalDate fecha, String yo,String requiero,String talQue, 
+   public userStory(String titulo,String autor,int ID, String yo,String requiero,String talQue, 
 		   				String condicionesDeAceptacion,int complejidad, int importancia){
 	   this.setTitulo(titulo);
 	   this.setAutor(autor);
@@ -26,7 +26,7 @@ public class userStory {
 	   this.setRequiero(requiero);
 	   this.setTalQue(talQue);
 	   this.setCondicionesDeAceptacion(condicionesDeAceptacion);
-	   this.fecha = fecha;
+	   //this.fecha = fecha;
 	   this.setComplejidad(complejidad);
 	   this.setImportancia(importancia);
    }
@@ -61,7 +61,7 @@ public class userStory {
 	public void setRequiero(String requiero) {
 		this.requiero = requiero;
 	}
-	
+	/*
 	public LocalDate getFecha() {
 		return fecha;
 	}
@@ -69,7 +69,7 @@ public class userStory {
 	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
-	
+	*/
 	public int getComplejidad() {
 		return complejidad;
 	}

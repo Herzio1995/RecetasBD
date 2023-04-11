@@ -6,7 +6,8 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class universalDocRenderer {
-	public void renderizar(userStory historia, String ruta) throws Exception {
+	public void renderizar(userStory historia) throws Exception {
+		String ruta = "lib/doc";
         Document documento = new Document();
         PdfWriter.getInstance(documento, new FileOutputStream(ruta));
 
