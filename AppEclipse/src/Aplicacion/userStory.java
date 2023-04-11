@@ -118,5 +118,4 @@ public class userStory {
 	public void setImportancia(int importancia) {
 		this.importancia = importancia;
 	}
-   
 }

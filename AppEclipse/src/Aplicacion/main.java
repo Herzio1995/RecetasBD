@@ -6,8 +6,8 @@ public class main {
 	public static void main(String[] args) {
 		conector cx = new conector();
 		cx.conectar();
-	}    
-	
+	}
+
 	private static void sendReview() {
 		LocalDate n = LocalDate.now();
 	}
