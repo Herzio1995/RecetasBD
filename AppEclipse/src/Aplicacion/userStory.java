@@ -3,26 +3,26 @@ package Aplicacion;
 import java.awt.TextArea;
 import java.time.LocalDate;
 
+import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
+
 public class userStory {
    private String titulo;
-   private int ID;
    private String autor;
-   private String yo;
-   private String como;
-   private String requiero;
-   private TextArea talQue;
-   private TextArea condicionesDeAceptacion;
+   private int ID;
    private LocalDate fecha;
+   private String yo; 
+   private String requiero;
+   private String talQue;
+   private String condicionesDeAceptacion;
    private int complejidad;
    private int importancia = 0;
    
-   public userStory(String titulo,int ID,String autor,String yo,String como,String requiero,TextArea talQue, 
-		   				TextArea condicionesDeAceptacion,LocalDate fecha,int complejidad, int importancia){
+   public userStory(String titulo,String autor,int ID,LocalDate fecha, String yo,String requiero,String talQue, 
+		   				String condicionesDeAceptacion,int complejidad, int importancia){
 	   this.setTitulo(titulo);
-	   this.setID(ID);
 	   this.setAutor(autor);
+	   this.setID(ID);
 	   this.setYo(yo);
-	   this.setComo(como);
 	   this.setRequiero(requiero);
 	   this.setTalQue(talQue);
 	   this.setCondicionesDeAceptacion(condicionesDeAceptacion);
@@ -38,11 +38,10 @@ public class userStory {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	
+
 	public int getID() {
 		return ID;
 	}
-
 	public void setID(int iD) {
 		ID = iD;
 	}
@@ -55,44 +54,12 @@ public class userStory {
 		this.autor = autor;
 	}
 	
-	public String getYo() {
-		return yo;
-	}
-	
-	public void setYo(String yo) {
-		this.yo = yo;
-	}
-	
-	public String getComo() {
-		return como;
-	}
-	
-	public void setComo(String como) {
-		this.como = como;
-	}
-	
-	public String getRequiero() {
+		public String getRequiero() {
 		return requiero;
 	}
 	
 	public void setRequiero(String requiero) {
 		this.requiero = requiero;
-	}
-	
-	public TextArea getTalQue() {
-		return talQue;
-	}
-
-	public void setTalQue(TextArea talQue) {
-		this.talQue = talQue;
-	}
-
-	public TextArea getCondicionesDeAceptacion() {
-		return condicionesDeAceptacion;
-	}
-
-	public void setCondicionesDeAceptacion(TextArea condicionesDeAceptacion) {
-		this.condicionesDeAceptacion = condicionesDeAceptacion;
 	}
 	
 	public LocalDate getFecha() {
@@ -118,4 +85,29 @@ public class userStory {
 	public void setImportancia(int importancia) {
 		this.importancia = importancia;
 	}
+
+	public String getCondicionesDeAceptacion() {
+		return condicionesDeAceptacion;
+	}
+
+	public void setCondicionesDeAceptacion(String condicionesDeAceptacion) {
+		this.condicionesDeAceptacion = condicionesDeAceptacion;
+	}
+
+	public String getTalQue() {
+		return talQue;
+	}
+
+	public void setTalQue(String talQue) {
+		this.talQue = talQue;
+	}
+
+	public String getYo() {
+		return yo;
+	}
+
+	public void setYo(String yo) {
+		this.yo = yo;
+	}
+   
 }
