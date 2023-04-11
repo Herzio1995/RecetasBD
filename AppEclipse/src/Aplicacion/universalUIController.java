@@ -39,6 +39,7 @@ public class universalUIController extends JFrame{
 		});
 	}
 	public universalUIController() {
+		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 794, 489);
 		contentPane = new JPanel();

@@ -6,6 +6,7 @@ public class main {
 	public static void main(String[] args) {
 		conector cx = new conector();
 		cx.conectar();
+		universalUIController.main(args);;
 	}
 
 	private static void sendReview() {
