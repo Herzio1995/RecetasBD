@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 
 public class universalUIController extends JFrame {
 	private userStory userStory;
-	private conector conector;
+	private ventana ventana;
 	private JLabel lblNewLabel;
 	private JPanel panel;
 	private JLabel lblYoComo;
@@ -199,11 +199,11 @@ public class universalUIController extends JFrame {
 		btnNewButton_1 = new JButton("Editar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(conector != null) {
-					conector.setVisible(true);
+				if(ventana != null) {
+					ventana.setVisible(true);
 				}else {
-					conector = new conector(userStory);
-					conector.setVisible(true);
+					ventana = new ventana(userStory);
+					ventana.setVisible(true);
 				}
 			}
 		});
