@@ -1,35 +1,44 @@
 package Aplicacion;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.SystemColor;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.UIManager;
-import java.awt.CardLayout;
 import java.awt.Color;
-import javax.swing.JTextField;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class universalUIController extends JFrame {
+	private userStory userStory;
+	private conector conector;
 	private JLabel lblNewLabel;
 	private JPanel panel;
 	private JLabel lblYoComo;
 	private JLabel lblRequiero;
 	private JLabel lblTalQue;
 	private JLabel lblCondiciones;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JButton BOTON1;
+	private JTextField textYoComo;
+	private JTextField textRequiero;
+	private JTextField textTalQue;
+	private JTextField textImportancia;
+	private JTextField textComplejidad;
+	private JTextField textCondiciones;
+	private JTextField textTitulo;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
+	private JTextField textID;
+	private JLabel lblNewLabel_3;
+	private JTextField textAutor;
+	private JLabel lblNewLabel_4;
+	private JTextField textFecha;
 	private JButton btnNewButton;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_3;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -51,6 +60,7 @@ public class universalUIController extends JFrame {
 	 * Create the frame.
 	 */
 	public universalUIController() {
+		setLocationRelativeTo(null);
 		getContentPane().setBackground(SystemColor.activeCaption);
 		getContentPane().setLayout(null);
 		
@@ -62,12 +72,12 @@ public class universalUIController extends JFrame {
 		
 		panel = new JPanel();
 		panel.setBackground(SystemColor.controlHighlight);
-		panel.setBounds(91, 52, 624, 434);
+		panel.setBounds(91, 52, 624, 564);
 		getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		lblYoComo = new JLabel("YO COMO :");
-		lblYoComo.setBounds(39, 42, 134, 28);
+		lblYoComo.setBounds(39, 159, 134, 28);
 		lblYoComo.setForeground(new Color(128, 0, 0));
 		lblYoComo.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 25));
 		panel.add(lblYoComo);
@@ -75,69 +85,133 @@ public class universalUIController extends JFrame {
 		lblRequiero = new JLabel("REQUIERO :");
 		lblRequiero.setForeground(new Color(128, 0, 0));
 		lblRequiero.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 25));
-		lblRequiero.setBounds(39, 87, 134, 41);
+		lblRequiero.setBounds(39, 213, 134, 41);
 		panel.add(lblRequiero);
 		
 		lblTalQue = new JLabel("TAL QUE :");
 		lblTalQue.setForeground(new Color(128, 0, 0));
 		lblTalQue.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 25));
-		lblTalQue.setBounds(39, 138, 88, 41);
+		lblTalQue.setBounds(39, 270, 88, 41);
 		panel.add(lblTalQue);
 		
 		lblCondiciones = new JLabel("CONDICIONES :");
 		lblCondiciones.setForeground(new Color(128, 0, 0));
 		lblCondiciones.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 23));
-		lblCondiciones.setBounds(39, 191, 134, 35);
+		lblCondiciones.setBounds(39, 334, 134, 35);
 		panel.add(lblCondiciones);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		textField.setColumns(10);
-		textField.setBounds(201, 38, 339, 32);
-		panel.add(textField);
+		textYoComo = new JTextField();
+		textYoComo.setEditable(false);
+		textYoComo.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textYoComo.setColumns(10);
+		textYoComo.setBounds(201, 160, 339, 32);
+		panel.add(textYoComo);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		textField_1.setColumns(10);
-		textField_1.setBounds(201, 89, 339, 35);
-		panel.add(textField_1);
+		textRequiero = new JTextField();
+		textRequiero.setEditable(false);
+		textRequiero.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textRequiero.setColumns(10);
+		textRequiero.setBounds(201, 218, 339, 35);
+		panel.add(textRequiero);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		textField_2.setColumns(10);
-		textField_2.setBounds(201, 136, 339, 36);
-		panel.add(textField_2);
+		textTalQue = new JTextField();
+		textTalQue.setEditable(false);
+		textTalQue.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textTalQue.setColumns(10);
+		textTalQue.setBounds(201, 275, 339, 36);
+		panel.add(textTalQue);
 		
-		BOTON1 = new JButton("ACEPTAR");
-		BOTON1.setForeground(Color.BLACK);
-		BOTON1.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 22));
-		BOTON1.setBounds(39, 370, 134, 35);
-		panel.add(BOTON1);
+		textImportancia = new JTextField();
+		textImportancia.setEditable(false);
+		textImportancia.setForeground(Color.BLACK);
+		textImportancia.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textImportancia.setColumns(10);
+		textImportancia.setBounds(433, 439, 58, 73);
+		panel.add(textImportancia);
 		
-		btnNewButton = new JButton("SALIR");
-		btnNewButton.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 22));
-		btnNewButton.setBounds(227, 370, 125, 35);
-		panel.add(btnNewButton);
+		textComplejidad = new JTextField();
+		textComplejidad.setEditable(false);
+		textComplejidad.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textComplejidad.setColumns(10);
+		textComplejidad.setBounds(487, 439, 53, 73);
+		panel.add(textComplejidad);
 		
-		textField_4 = new JTextField();
-		textField_4.setForeground(Color.BLACK);
-		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_4.setColumns(10);
-		textField_4.setBounds(429, 332, 58, 73);
-		panel.add(textField_4);
+		textCondiciones = new JTextField();
+		textCondiciones.setEditable(false);
+		textCondiciones.setBounds(201, 334, 339, 61);
+		panel.add(textCondiciones);
+		textCondiciones.setColumns(10);
 		
-		textField_5 = new JTextField();
-		textField_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_5.setColumns(10);
-		textField_5.setBounds(487, 332, 53, 73);
-		panel.add(textField_5);
+		textTitulo = new JTextField();
+		textTitulo.setEditable(false);
+		textTitulo.setBounds(137, 32, 211, 19);
+		panel.add(textTitulo);
+		textTitulo.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(201, 203, 339, 101);
-		panel.add(textField_3);
-		textField_3.setColumns(10);
+		lblNewLabel_1 = new JLabel("ID :");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(358, 32, 68, 19);
+		panel.add(lblNewLabel_1);
+		
+		lblNewLabel_2 = new JLabel("Titulo :");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_2.setBounds(39, 27, 88, 28);
+		panel.add(lblNewLabel_2);
+		
+		textID = new JTextField();
+		textID.setEditable(false);
+		textID.setBounds(433, 32, 80, 19);
+		panel.add(textID);
+		textID.setColumns(10);
+		
+		lblNewLabel_3 = new JLabel("Autor :");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_3.setBounds(39, 69, 88, 19);
+		panel.add(lblNewLabel_3);
+		
+		textAutor = new JTextField();
+		textAutor.setEditable(false);
+		textAutor.setBounds(137, 69, 211, 19);
+		panel.add(textAutor);
+		textAutor.setColumns(10);
+		
+		lblNewLabel_4 = new JLabel("Fecha :");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_4.setBounds(358, 70, 68, 19);
+		panel.add(lblNewLabel_4);
+		
+		textFecha = new JTextField();
+		textFecha.setEditable(false);
+		textFecha.setBounds(433, 73, 80, 19);
+		panel.add(textFecha);
+		textFecha.setColumns(10);
+		
+		btnNewButton = new JButton("Aceptar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnNewButton.setBounds(529, 626, 98, 32);
+		getContentPane().add(btnNewButton);
+		
+		btnNewButton_1 = new JButton("Editar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(conector != null) {
+					conector.setVisible(true);
+				}else {
+					conector = new conector(userStory);
+					conector.setVisible(true);
+				}
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnNewButton_1.setBounds(236, 626, 98, 32);
+		getContentPane().add(btnNewButton_1);
 		setBackground(SystemColor.activeCaption);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 793, 533);
+		setBounds(100, 100, 792, 712);
 	}
 }
